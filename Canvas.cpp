@@ -13,6 +13,7 @@ Canvas::Canvas(int width, int height)
 	data = new sf::Uint8[width*height * 4];
 	this->width = width;
 	this->height = height;
+	clear(sf::Color(0,0,0,0));
 }
 
 Canvas::~Canvas()
