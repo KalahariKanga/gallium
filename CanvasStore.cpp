@@ -4,7 +4,7 @@ CanvasStore* CanvasStore::instance = nullptr;
 
 CanvasStore::CanvasStore()
 {
-	clearColour = sf::Color(0, 0, 0, 255);
+	clearColour = sf::Color(0, 255, 0, 255);
 }
 
 
@@ -44,5 +44,5 @@ Canvas* CanvasStore::getCanvas(std::string name)
 
 void CanvasStore::clearScreen()
 {
-	screen->clear();
+	screen->clear(clearColour);
 }

@@ -281,6 +281,7 @@ void Canvas::clear(sf::Color c)
 		data[4 * i] = c.r;
 		data[4 * i + 1] = c.g;
 		data[4 * i + 2] = c.b;
+		data[4 * i + 3] = c.a;
 	}
 }
 void Canvas::clear()
