@@ -1,17 +1,29 @@
 #pragma once
 #include <memory>
-#include "CanvasStore.h"
+#include <vector>
+#include "Component.h"
 class GameObject
 {
 
 protected:
-	Canvas* const screen = CanvasStore::get()->screen;
-	Canvas* _Canvas = nullptr;
-	int x, y;
+	std::vector<Component*> components;
 public:
 	GameObject();
 	~GameObject();
-	virtual void update();
+	float x, y;
+	void update();
+	template<class T> Component* getComponent();
 };
+
+template<class T>
+Component* getComponent()
+{
+	for (auto a& : components)
+	{
+		if (typeid(T) == typeid(a))
+			return a;
+	}
+	return nullptr;
+}
 
 typedef std::shared_ptr<GameObject> ObjectPtr;

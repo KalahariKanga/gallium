@@ -1,7 +1,7 @@
 #pragma once
 #include "sfml/graphics.hpp"
 #include "ObjectStore.h"
-
+#include "CanvasStore.h"
 class Game
 {
 	sf::RenderWindow window;

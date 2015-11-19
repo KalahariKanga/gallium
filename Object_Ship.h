@@ -6,6 +6,5 @@ class Object_Ship :
 public:
 	Object_Ship();
 	~Object_Ship();
-	virtual void update();
 };
 
