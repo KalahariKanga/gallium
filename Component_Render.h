@@ -4,6 +4,7 @@
 class Component_Render :
 	public Component
 {
+protected:
 	Canvas* const screen = CanvasStore::get()->screen;
 	Canvas* _Canvas = nullptr;
 public:

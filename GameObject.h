@@ -12,18 +12,19 @@ public:
 	~GameObject();
 	float x, y;
 	void update();
-	template<class T> Component* getComponent();
+	template<class T> T* getComponent();
 };
 
 template<class T>
-Component* getComponent()
+T* GameObject::getComponent()
 {
-	for (auto a& : components)
+	for (auto a : components)
 	{
-		if (typeid(T) == typeid(a))
-			return a;
+		T* ptr = dynamic_cast<T*>(a);
+		if (ptr)
+			return ptr;
 	}
-	return nullptr;
+	throw new std::exception("getComponent error");
 }
 
 typedef std::shared_ptr<GameObject> ObjectPtr;
