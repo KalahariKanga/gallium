@@ -5,6 +5,9 @@
 
 int main(int argc, char* argv[])
 {
+	#if NDEBUG
+		srand(time(0));
+	#endif
 	Game game;
 	ObjectPtr i = std::make_shared<Object_Ship>();
 	game.objectstore.createInstance(i);

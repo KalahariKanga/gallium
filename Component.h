@@ -1,4 +1,5 @@
 #pragma once
+#include "sfml/graphics.hpp"
 class GameObject;
 
 class Component
