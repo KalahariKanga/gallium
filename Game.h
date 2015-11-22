@@ -2,6 +2,7 @@
 #include "sfml/graphics.hpp"
 #include "ObjectStore.h"
 #include "CanvasStore.h"
+#include "Math.h"
 #include <chrono>
 #include <thread>
 class Game

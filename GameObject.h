@@ -2,6 +2,7 @@
 #include <memory>
 #include <vector>
 #include "Component.h"
+#include "Math.h"
 class GameObject
 {
 

@@ -41,9 +41,9 @@ void BigPixelArray::addPixel(int x, int y, sf::Color col, int variance = 0)
 	sf::Color newcol = col;
 	if (variance)
 	{
-		newcol.r = col.r - variance / 2 + rand() % variance;
-		newcol.g = col.g - variance / 2 + rand() % variance;
-		newcol.b = col.b - variance / 2 + rand() % variance;
+		newcol.r = Math::clamp(col.r - variance / 2 + rand() % variance, 0, 255);
+		newcol.g = Math::clamp(col.g - variance / 2 + rand() % variance, 0, 255);
+		newcol.b = Math::clamp(col.b - variance / 2 + rand() % variance, 0, 255);
 	}
 	pixels[x][y].col = newcol;
 	pixels[x][y].state = 0;
@@ -64,7 +64,7 @@ void BigPixelArray::loadFromFile(std::string fname)
 	setSize(image.getSize().x, image.getSize().y);
 	for (int cx = 0; cx < width; cx++)
 		for (int cy = 0; cy < height; cy++)
-			addPixel(cx, cy, image.getPixel(cx, cy),20);
+			addPixel(cx, cy, image.getPixel(cx, cy),50);
 }
 
 void BigPixelArray::updateState(BigPixel* px, int x, int y, int t)
