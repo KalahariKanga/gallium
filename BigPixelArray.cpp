@@ -16,18 +16,23 @@ void BigPixelArray::drawPixel(BigPixel* px, int root_x, int root_y, int x, int y
 	{
 		sf::Color col;
 		screen->setDrawColour(px->col);
-		screen->drawRectangle(root_x + pixelSize * x, root_y + pixelSize * y, root_x + pixelSize * (x + 1), root_y + pixelSize * (y + 1), 0);
+		int centrex = root_x + pixelSize * (x + 0.5);
+		int centrey = root_y + pixelSize * (y + 0.5);
+		int r = px->state*(pixelSize / 2);
+		screen->drawCentredRectangle(centrex, centrey, r, r, 0);
 	}
 }
 
-
 void BigPixelArray::update(GameObject* parent)
 {
+	static int t = 0;
 	for (int cx = 0; cx < width; cx++)
 		for (int cy = 0; cy < height; cy++)
 		{
+			updateState(&pixels[cx][cy], cx, cy, t);
 			drawPixel(&pixels[cx][cy], parent->x, parent->y, cx, cy);
 		}
+	++t;
 }
 
 void BigPixelArray::addPixel(int x, int y, sf::Color col, int variance = 0)
@@ -59,5 +64,13 @@ void BigPixelArray::loadFromFile(std::string fname)
 	setSize(image.getSize().x, image.getSize().y);
 	for (int cx = 0; cx < width; cx++)
 		for (int cy = 0; cy < height; cy++)
-			addPixel(cx, cy, image.getPixel(cx, cy),10);
+			addPixel(cx, cy, image.getPixel(cx, cy),20);
+}
+
+void BigPixelArray::updateState(BigPixel* px, int x, int y, int t)
+{
+	if (rand() % 20 == 0)
+		px->setState(px->state + 0.1);
+	if (t > transitionTime)
+		px->setState(1);
 }
