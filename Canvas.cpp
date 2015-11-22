@@ -237,8 +237,8 @@ void Canvas::drawCentredRectangle(int x, int y, int rx, int ry, bool outline)
 		drawLine(x - rx, y - ry, x - rx, y - ry);
 	}
 	else
-		for (int cx = x - rx; cx <= x + rx; cx++)
-			for (int cy = y - ry; cy <= y + ry; cy++)
+		for (int cx = x - rx; cx < x + rx; cx++)
+			for (int cy = y - ry; cy < y + ry; cy++)
 				drawPoint(cx, cy);
 }
 

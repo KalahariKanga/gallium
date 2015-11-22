@@ -6,7 +6,7 @@ Object_Ship::Object_Ship()
 {
 	components.push_back(new ShipController());
 	components.push_back(new BigPixelArray());
-	getComponent<BigPixelArray>()->loadFromFile("C:\\Users\\David\\Pictures\\greencircle.png");
+	getComponent<BigPixelArray>()->loadFromFile("res\\ship.png");
 	x = y = 200;
 }
 
