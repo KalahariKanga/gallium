@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[])
 {
-	#if NDEBUG
+	#ifndef NDEBUG
 		srand(time(0));
 	#endif
 	Game game;
