@@ -227,6 +227,21 @@ void Canvas::drawRectangle(int x1, int y1, int x2, int y2, bool outline)
 	}
 }
 
+void Canvas::drawCentredRectangle(int x, int y, int rx, int ry, bool outline)
+{
+	if (outline)
+	{
+		drawLine(x - rx, y - ry, x + rx, y - ry);
+		drawLine(x + rx, y - ry, x + rx, y + ry);
+		drawLine(x + rx, y + ry, x - rx, y + ry);
+		drawLine(x - rx, y - ry, x - rx, y - ry);
+	}
+	else
+		for (int cx = x - rx; cx <= x + rx; cx++)
+			for (int cy = y - ry; cy <= y + ry; cy++)
+				drawPoint(cx, cy);
+}
+
 void Canvas::drawCanvas(Canvas* source, int x, int y)
 {
 	for (int cx = 0; cx < source->width; cx++)
