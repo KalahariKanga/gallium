@@ -21,7 +21,7 @@ public:
 	~Game();
 
 	CanvasStore* const canvasstore = CanvasStore::get();
-	ObjectStore objectstore;
+	ObjectStore* const objectstore = ObjectStore::get();
 
 	void update();
 };

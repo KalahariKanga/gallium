@@ -6,14 +6,16 @@
 
 class ObjectStore
 {
+	ObjectStore();
 	std::vector<ObjectPtr> objects;
 	std::vector<ObjectPtr> toCreate;
 	std::vector<ObjectPtr> toDestroy;
+	static ObjectStore* instance;
 public:
-	ObjectStore();
+	
 	~ObjectStore();
-
-	ObjectPtr createInstance(GameObject* object);
+	static ObjectStore* get();
+	//ObjectPtr createInstance(GameObject* object);
 	ObjectPtr createInstance(ObjectPtr object);
 	void destroyInstance(ObjectPtr object);
 

@@ -14,6 +14,7 @@ public:
 	float x, y;
 	void update();
 	template<class T> T* getComponent();
+	void destroyInstance();
 };
 
 template<class T>
@@ -28,4 +29,5 @@ T* GameObject::getComponent()
 	throw new std::exception("getComponent error");
 }
 
-typedef std::shared_ptr<GameObject> ObjectPtr;
+//typedef std::shared_ptr<GameObject> ObjectPtr;
+typedef GameObject* ObjectPtr;

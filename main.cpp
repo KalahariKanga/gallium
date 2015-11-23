@@ -9,8 +9,8 @@ int main(int argc, char* argv[])
 		srand(time(0));
 	#endif
 	Game game;
-	ObjectPtr i = std::make_shared<Object_Ship>();
-	game.objectstore.createInstance(i);
+	ObjectPtr i = new Object_Ship();
+	game.objectstore->createInstance(i);
 	while (1)
 		game.update();
 

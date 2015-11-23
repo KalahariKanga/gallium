@@ -17,7 +17,7 @@ void Game::update()
 {
 	start = std::chrono::system_clock::now();
 	canvasstore->clearScreen();
-	objectstore.update();
+	objectstore->update();
 
 	image.create(window_width, window_height, CanvasStore::get()->screen->getData());
 	texture.loadFromImage(image);
