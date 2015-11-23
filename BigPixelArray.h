@@ -21,7 +21,7 @@ class BigPixelArray : public Component_Render
 	std::vector<std::vector<BigPixel>> pixels;
 	void drawPixel(BigPixel* px, int root_x, int root_y, int x, int y);
 	void updateState(BigPixel* px, int x, int y, int t);
-	int pixelSize = 16;
+	int pixelSize = 4;
 	int transitionTime = 500;
 	int width, height;
 public:

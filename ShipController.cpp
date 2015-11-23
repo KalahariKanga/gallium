@@ -1,5 +1,7 @@
 #include "ShipController.h"
 #include "GameObject.h"
+#include "ObjectStore.h"
+#include "Object_ShipBullet.h"
 
 ShipController::ShipController()
 {
@@ -7,6 +9,7 @@ ShipController::ShipController()
 	downKey = sf::Keyboard::Down;
 	leftKey = sf::Keyboard::Left;
 	rightKey = sf::Keyboard::Right;
+	fireKey = sf::Keyboard::Z;
 }
 
 
@@ -31,5 +34,12 @@ void ShipController::update(GameObject* parent)
 	if (sf::Keyboard::isKeyPressed(rightKey))
 	{
 		parent->x += speed;
+	}
+	if (sf::Keyboard::isKeyPressed(fireKey))
+	{
+		GameObject* bullet = new Object_ShipBullet();
+		bullet->x = parent->x;
+		bullet->y = parent->y;
+		ObjectStore::get()->createInstance(bullet);
 	}
 }
