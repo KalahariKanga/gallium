@@ -16,6 +16,11 @@ void GameObject::update()
 		a->update(this);
 }
 
+void GameObject::createInstance(GameObject* obj)
+{
+	ObjectStore::get()->createInstance(obj);
+}
+
 void GameObject::destroyInstance()
 {
 	ObjectStore::get()->destroyInstance(this);

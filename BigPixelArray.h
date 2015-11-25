@@ -25,7 +25,7 @@ class BigPixelArray : public Component_Render
 	int transitionTime = 500;
 	int width, height;
 public:
-	BigPixelArray();
+	BigPixelArray(int pixelSize);
 	~BigPixelArray();
 	virtual void update(GameObject* parent);
 	void addPixel(int x, int y, sf::Color col, int variance);

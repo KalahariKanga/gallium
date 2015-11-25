@@ -1,7 +1,7 @@
 #include "BigPixelArray.h"
 #include "GameObject.h"
 
-BigPixelArray::BigPixelArray()
+BigPixelArray::BigPixelArray(int pixelSize) : pixelSize(pixelSize)
 {
 }
 

@@ -4,7 +4,7 @@
 
 Object_ShipBullet::Object_ShipBullet()
 {
-	components.push_back(new BigPixelArray());
+	components.push_back(new BigPixelArray(3));
 	components.push_back(new ShipBulletMovement());
 	getComponent<BigPixelArray>()->loadFromFile("res\\shipbullet.png");
 }

@@ -14,6 +14,7 @@ public:
 	float x, y;
 	void update();
 	template<class T> T* getComponent();
+	void createInstance(GameObject* obj);
 	void destroyInstance();
 };
 
