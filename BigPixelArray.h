@@ -37,6 +37,7 @@ public:
 		pixels = std::vector<std::vector<BigPixel>>(width, std::vector<BigPixel>(height));
 	}
 	void loadFromFile(std::string fname);
+	void loadFromCanvas(std::string canvasName);
 	
 };
 

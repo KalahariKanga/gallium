@@ -67,9 +67,20 @@ void BigPixelArray::loadFromFile(std::string fname)
 			addPixel(cx, cy, image.getPixel(cx, cy),50);
 }
 
+void BigPixelArray::loadFromCanvas(std::string canvasName)
+{
+	clearPixels();
+	Canvas* canvas;
+	canvas = CanvasStore::get()->getCanvas(canvasName);
+	setSize(canvas->getWidth(), canvas->getHeight());
+	for (int cx = 0; cx < width; cx++)
+		for (int cy = 0; cy < height; cy++)
+			addPixel(cx, cy, canvas->getPoint(cx, cy), 50);
+}
+
 void BigPixelArray::updateState(BigPixel* px, int x, int y, int t)
 {
-	if (rand() % 20 == 0)
+	if (rand() % width == 0)
 		px->setState(px->state + 0.1);
 	if (t > transitionTime)
 		px->setState(1);

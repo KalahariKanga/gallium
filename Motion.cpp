@@ -1,32 +1,32 @@
-#include "BulletMovement.h"
+#include "Motion.h"
 #include "GameObject.h"
 
-BulletMovement::BulletMovement()
+Motion::Motion()
 {
 }
 
 
-BulletMovement::~BulletMovement()
+Motion::~Motion()
 {
 }
 
-float BulletMovement::getDirection()
+float Motion::getDirection()
 {
 	return atan2(yVelocity, xVelocity);
 }
 
-float BulletMovement::getSpeed()
+float Motion::getSpeed()
 {
 	return sqrt(xVelocity*xVelocity + yVelocity*yVelocity);
 }
 
-void BulletMovement::setMotion(float d, float s)
+void Motion::setMotion(float d, float s)
 {
 	xVelocity = s*sin(d);
 	yVelocity = s*cos(d);
 }
 
-void BulletMovement::update(GameObject* parent)
+void Motion::update(GameObject* parent)
 {
 	xVelocity += xAcceleration;
 	yVelocity += yAcceleration;

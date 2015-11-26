@@ -19,11 +19,7 @@ ShipController::~ShipController()
 }
 
 void ShipController::update(GameObject* parent)
-{
-	/*only here for testing */
-	GameObject* bullet = new Object_Bullet();
-	parent->createInstance(bullet);
-	/*						*/		
+{	
 	if (sf::Keyboard::isKeyPressed(upKey))
 	{
 		parent->y -= speed;
