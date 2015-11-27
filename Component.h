@@ -1,5 +1,6 @@
 #pragma once
 #include "sfml/graphics.hpp"
+#include "Vector.h"
 class GameObject;
 
 class Component

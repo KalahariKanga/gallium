@@ -8,5 +8,6 @@ public:
 	BulletSpawn();
 	~BulletSpawn();
 	void update(GameObject* parent);
+	void spawn(Vector position_offset, Vector v, Vector a);
 };
 

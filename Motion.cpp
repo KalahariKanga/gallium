@@ -10,26 +10,18 @@ Motion::~Motion()
 {
 }
 
-float Motion::getDirection()
+void Motion::setVelocity(Vector v)
 {
-	return atan2(yVelocity, xVelocity);
+	velocity = v;
 }
 
-float Motion::getSpeed()
+void Motion::setAcceleration(Vector a)
 {
-	return sqrt(xVelocity*xVelocity + yVelocity*yVelocity);
-}
-
-void Motion::setMotion(float d, float s)
-{
-	xVelocity = s*sin(d);
-	yVelocity = s*cos(d);
+	acceleration = a;
 }
 
 void Motion::update(GameObject* parent)
 {
-	xVelocity += xAcceleration;
-	yVelocity += yAcceleration;
-	parent->x += xVelocity;
-	parent->y += yVelocity;
+	velocity = velocity + acceleration;
+	parent->position = parent->position + velocity;
 }

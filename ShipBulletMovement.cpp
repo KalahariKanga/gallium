@@ -13,7 +13,7 @@ ShipBulletMovement::~ShipBulletMovement()
 
 void ShipBulletMovement::update(GameObject* parent)
 {
-	parent->y -= speed;
-	if (parent->y < 100)
+	parent->position = parent->position - Vector(0,-speed);
+	if (parent->position.getY() < 100)
 		parent->destroyInstance();
 }

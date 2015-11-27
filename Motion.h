@@ -3,14 +3,15 @@
 class Motion :
 	public Component
 {
-	float xVelocity = 0, yVelocity = 0;
-	float xAcceleration = 0, yAcceleration = 0;
+	Vector velocity;
+	Vector acceleration;
 public:
 	Motion();
 	~Motion();
 	void update(GameObject* parent);
 	float getDirection();
 	float getSpeed();
-	void setMotion(float d, float s);
+	void setVelocity(Vector v);
+	void setAcceleration(Vector a);
 };
 

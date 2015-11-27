@@ -15,5 +15,5 @@ Component_Render::~Component_Render()
 
 void Component_Render::update(GameObject* parent)
 {
-	screen->drawCanvas(_Canvas, parent->x, parent->y);
+	screen->drawCanvas(_Canvas, parent->position.getX(), parent->position.getY());
 }

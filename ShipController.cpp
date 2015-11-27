@@ -22,25 +22,24 @@ void ShipController::update(GameObject* parent)
 {	
 	if (sf::Keyboard::isKeyPressed(upKey))
 	{
-		parent->y -= speed;
+		parent->position += Vector(0, -speed);
 	}
 	if (sf::Keyboard::isKeyPressed(downKey))
 	{
-		parent->y += speed;
+		parent->position += Vector(0, speed);
 	}
 	if (sf::Keyboard::isKeyPressed(leftKey))
 	{
-		parent->x -= speed;
+		parent->position += Vector(-speed, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(rightKey))
 	{
-		parent->x += speed;
+		parent->position += Vector(speed, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(fireKey))
 	{
 		GameObject* bullet = new Object_ShipBullet();
-		bullet->x = parent->x;
-		bullet->y = parent->y;
+		bullet->position = parent->position;
 		ObjectStore::get()->createInstance(bullet);
 	}
 }

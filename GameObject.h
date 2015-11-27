@@ -11,7 +11,7 @@ protected:
 public:
 	GameObject();
 	~GameObject();
-	float x, y;
+	Vector position;
 	void update();
 	template<class T> T* getComponent();
 	void createInstance(GameObject* obj);

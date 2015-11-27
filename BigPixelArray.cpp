@@ -30,7 +30,7 @@ void BigPixelArray::update(GameObject* parent)
 		for (int cy = 0; cy < height; cy++)
 		{
 			updateState(&pixels[cx][cy], cx, cy, t);
-			drawPixel(&pixels[cx][cy], parent->x, parent->y, cx, cy);
+			drawPixel(&pixels[cx][cy], parent->position.getX(), parent->position.getY(), cx, cy);
 		}
 	++t;
 }

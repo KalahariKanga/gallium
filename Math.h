@@ -1,5 +1,6 @@
 #pragma once
 #include <random>
+#include <cmath>
 class Math
 {
 	static std::default_random_engine engine;

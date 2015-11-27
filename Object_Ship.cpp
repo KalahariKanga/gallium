@@ -11,7 +11,7 @@ Object_Ship::Object_Ship()
 	//obviously very dumb
 	//make loadFromCanvas
 	getComponent<BigPixelArray>()->loadFromFile("res\\ship.png");
-	x = y = 200;
+	position.setXY(200, 200);
 }
 
 

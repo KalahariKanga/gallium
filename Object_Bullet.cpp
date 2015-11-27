@@ -6,9 +6,11 @@ Object_Bullet::Object_Bullet()
 {
 	components.push_back(new BigPixelArray(4));
 	components.push_back(new Motion());
-	getComponent<Motion>()->setMotion(Math::random(0, 2 * Math::pi), 2);
+	Vector velocity;
+	velocity.setPolar(2, Math::random(0, 2 * Math::pi));
+	getComponent<Motion>()->setVelocity(velocity);
 	getComponent<BigPixelArray>()->loadFromFile("res\\shipbullet.png");
-	x = y = 200;
+	position.setXY(200,200);
 }
 
 
