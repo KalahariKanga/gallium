@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "Object_Bullet.h"
 #include "Motion.h"
+#include "ObjectStore.h"
 
 BulletSpawn::BulletSpawn()
 {
@@ -31,4 +32,5 @@ void BulletSpawn::spawn(Vector p, Vector v, Vector a)
 	bullet->position = p;
 	bullet->getComponent<Motion>()->setVelocity(v);
 	bullet->getComponent<Motion>()->setAcceleration(a);
+	ObjectStore::get()->createInstance(bullet);
 }

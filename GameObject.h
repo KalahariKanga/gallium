@@ -13,6 +13,7 @@ public:
 	~GameObject();
 	Vector position;
 	void update();
+	virtual void step();
 	template<class T> T* getComponent();
 	void createInstance(GameObject* obj);
 	void destroyInstance();

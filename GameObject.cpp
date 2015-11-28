@@ -10,8 +10,14 @@ GameObject::~GameObject()
 {
 }
 
+void GameObject::step()
+{
+
+}
+
 void GameObject::update()
 {
+	step();
 	for (auto& a : components)
 		a->update(this);
 }

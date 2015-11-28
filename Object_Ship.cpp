@@ -7,7 +7,6 @@ Object_Ship::Object_Ship()
 {
 	components.push_back(new ShipController());
 	components.push_back(new BigPixelArray(2));
-	components.push_back(new BulletSpawn());
 	//obviously very dumb
 	//make loadFromCanvas
 	getComponent<BigPixelArray>()->loadFromFile("res\\ship.png");
