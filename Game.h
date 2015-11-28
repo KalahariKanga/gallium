@@ -11,8 +11,6 @@ class Game
 	sf::Sprite sprite;
 	sf::Texture texture;
 	sf::Image image;
-	const int window_width = 800;
-	const int window_height = 600;
 
 	std::chrono::time_point<std::chrono::system_clock> start, end;
 	int fps = 60;
@@ -22,7 +20,8 @@ public:
 
 	CanvasStore* const canvasstore = CanvasStore::get();
 	ObjectStore* const objectstore = ObjectStore::get();
-
+	static const int window_width = 800;
+	static const int window_height = 600;
 	void update();
 };
 
