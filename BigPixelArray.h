@@ -29,12 +29,18 @@ public:
 	~BigPixelArray();
 	virtual void update(GameObject* parent);
 	void addPixel(int x, int y, sf::Color col, int variance);
+	void removePixel(int x, int y);
 	void clearPixels();
 	void setSize(unsigned width, unsigned height)
 	{
 		this->width = width;
 		this->height = height;
 		pixels = std::vector<std::vector<BigPixel>>(width, std::vector<BigPixel>(height));
+	}
+	int getWidth(){ return width; }
+	int getHeight(){ return height; }
+	bool getAlive(int cx, int cy){
+		return pixels[cx][cy].on;
 	}
 	void loadFromFile(std::string fname);
 	void loadFromCanvas(std::string canvasName);

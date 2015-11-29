@@ -31,7 +31,6 @@ void Object_Pattern1::step()
 			getComponent<BulletSpawn>()->spawn(spawnPos[c], Vector(-b, a), Vector(-b/50, a/50));
 			getComponent<BulletSpawn>()->spawn(spawnPos[c], Vector(-a, -b), Vector(-a/50, -b/50));
 			getComponent<BulletSpawn>()->spawn(spawnPos[c], Vector(b, -a), Vector(b/50, -a/50));
-			spawnPos[c] += Vector(2 * sin((float)t / 200), 2 * cos((float)t / 200));
 		}
 	}
 	

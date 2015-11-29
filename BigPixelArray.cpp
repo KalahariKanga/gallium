@@ -49,6 +49,11 @@ void BigPixelArray::addPixel(int x, int y, sf::Color col, int variance = 0)
 	pixels[x][y].state = 0;
 }
 
+void BigPixelArray::removePixel(int x, int y)
+{
+	pixels[x][y].on = 0;
+}
+
 void BigPixelArray::clearPixels()
 {
 	for (int cx = 0; cx < width; cx++)

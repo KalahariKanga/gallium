@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Object_Ship.h"
 #include "Object_Pattern1.h"
+#include "Object_LifeExplosion.h"
 #include <iostream>
 
 int main(int argc, char* argv[])
@@ -14,6 +15,7 @@ int main(int argc, char* argv[])
 	ObjectPtr j = new Object_Pattern1();
 	game.objectstore->createInstance(i);
 	game.objectstore->createInstance(j);
+	game.objectstore->createInstance(new Object_LifeExplosion());
 	while (1)
 		game.update();
 
